@@ -10,7 +10,7 @@ public class OrderResponse {
 
     private Double amount;
 
-    private String status;
+    private OrderStatus status;
 
     private LocalDateTime createdAt;
 
@@ -38,11 +38,11 @@ public class OrderResponse {
         this.amount = amount;
     }
 
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 

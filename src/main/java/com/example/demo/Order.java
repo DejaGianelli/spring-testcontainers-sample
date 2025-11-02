@@ -17,9 +17,25 @@ public class Order {
 
     private Double amount;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
     private LocalDateTime createdAt;
+
+    public Order() {
+    }
+
+    private Order(Builder builder) {
+        setId(builder.id);
+        setCustomerId(builder.customerId);
+        setAmount(builder.amount);
+        setStatus(builder.status);
+        setCreatedAt(builder.createdAt);
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
 
     public Long getId() {
         return id;
@@ -45,11 +61,11 @@ public class Order {
         this.amount = amount;
     }
 
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 
@@ -71,5 +87,46 @@ public class Order {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+
+    public static final class Builder {
+        private Long id;
+        private Integer customerId;
+        private Double amount;
+        private OrderStatus status;
+        private LocalDateTime createdAt;
+
+        private Builder() {
+        }
+
+        public Builder id(Long val) {
+            id = val;
+            return this;
+        }
+
+        public Builder customerId(Integer val) {
+            customerId = val;
+            return this;
+        }
+
+        public Builder amount(Double val) {
+            amount = val;
+            return this;
+        }
+
+        public Builder status(OrderStatus val) {
+            status = val;
+            return this;
+        }
+
+        public Builder createdAt(LocalDateTime val) {
+            createdAt = val;
+            return this;
+        }
+
+        public Order build() {
+            return new Order(this);
+        }
     }
 }
