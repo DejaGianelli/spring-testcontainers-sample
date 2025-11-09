@@ -10,3 +10,16 @@ services:
             MYSQL_ROOT_PASSWORD: example
             MYSQL_DATABASE: spring_testing
         # (this is just an example, not intended to be a production configuration)
+    localstack:
+        image: localstack/localstack:3.5.0
+        ports:
+            - "127.0.0.1:4566:4566"            # LocalStack Gateway
+            - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+        environment:
+            # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
+            - DEBUG=${DEBUG:-0}
+            - SERVICES=sqs
+        volumes:
+            - "./.docker/localstack:/etc/localstack/init/ready.d"
+            - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+            - "/var/run/docker.sock:/var/run/docker.sock"
