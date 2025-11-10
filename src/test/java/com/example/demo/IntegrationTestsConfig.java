@@ -5,7 +5,8 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.utility.DockerImageName;
 
-public class MyContainers {
+
+public class IntegrationTestsConfig {
 
     @Container
     @ServiceConnection
