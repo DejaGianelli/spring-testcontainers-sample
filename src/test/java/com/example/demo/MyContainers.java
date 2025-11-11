@@ -6,7 +6,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.utility.DockerImageName;
 
 
-public class IntegrationTestsConfig {
+public class MyContainers {
 
     @Container
     @ServiceConnection

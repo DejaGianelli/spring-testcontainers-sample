@@ -13,7 +13,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Import(TestcontainersConfiguration.class)
+@Import(IntegrationTestsConfiguration.class)
 @AutoConfigureWebTestClient
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

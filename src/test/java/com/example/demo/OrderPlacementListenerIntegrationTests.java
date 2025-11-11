@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.TestcontainersConfiguration.TestMessageInterceptor;
+import com.example.demo.IntegrationTestsConfiguration.TestMessageInterceptor;
 import io.awspring.cloud.sqs.operations.SendResult;
 import io.awspring.cloud.sqs.operations.SqsTemplate;
 import org.junit.jupiter.api.Assertions;
@@ -13,7 +13,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.localstack.LocalStackContainer;
 
-@Import(TestcontainersConfiguration.class)
+@Import(IntegrationTestsConfiguration.class)
 @AutoConfigureWebTestClient
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

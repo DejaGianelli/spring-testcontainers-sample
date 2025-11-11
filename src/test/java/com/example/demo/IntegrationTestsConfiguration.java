@@ -16,11 +16,11 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
-@ImportTestcontainers(IntegrationTestsConfig.class)
+@ImportTestcontainers(MyContainers.class)
 @TestConfiguration(proxyBeanMethods = false)
-class TestcontainersConfiguration {
+class IntegrationTestsConfiguration {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestcontainersConfiguration.class);
+    private static final Logger logger = LoggerFactory.getLogger(IntegrationTestsConfiguration.class);
 
     @Bean
     public TestMessageInterceptor<Object> testMessageInterceptor() {
