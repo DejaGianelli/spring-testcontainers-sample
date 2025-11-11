@@ -18,7 +18,7 @@ services:
         environment:
             # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
             - DEBUG=${DEBUG:-0}
-            - SERVICES=sqs
+            - SERVICES=sqs,secretsmanager
         volumes:
             - "./.docker/localstack:/etc/localstack/init/ready.d"
             - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"

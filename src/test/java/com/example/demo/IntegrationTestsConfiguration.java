@@ -50,7 +50,7 @@ class IntegrationTestsConfiguration {
     LocalStackContainer localStackContainer() {
         try (LocalStackContainer localStackContainer =
                      new LocalStackContainer("localstack/localstack:3.5.0")
-                             .withServices("sqs")
+                             .withServices("sqs", "secretsmanager")
                              .withFileSystemBind(
                                      ".docker/localstack",
                                      "/etc/localstack/init/ready.d",
